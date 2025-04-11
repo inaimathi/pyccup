@@ -1,8 +1,5 @@
 # pyccup 0.1
 
-[![Build Status](https://travis-ci.org/nbessi/pyccup.svg?branch=master)](https://travis-ci.org/nbessi/pyccup)
-[![Coverage Status](https://coveralls.io/repos/nbessi/pyccup/badge.png?branch=master)](https://coveralls.io/r/nbessi/pyccup?branch=master)
-
 Python version of clojure hiccup https://github.com/weavejester/hiccup
 Original concept by James Reeves
 
