@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pyccup"
 version = "0.0.1"
 authors = [
-  { name="Nicolas Bessi", email="nbessi@gmail.com"}
+  { name="Nicolas Bessi", email="nbessi@gmail.com"},
   { name="inaimathi", email="leo.zovic@gmail.com" },
 ]
 description = "A derivation of Nicolas Bessi's trivial port of Hiccup to Python"
