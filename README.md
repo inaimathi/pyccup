@@ -1,4 +1,6 @@
-# pyccup 0.1
+# pyccup
+
+[![Upload Python Package](https://github.com/inaimathi/pyccup/actions/workflows/python-publish.yml/badge.svg)](https://github.com/inaimathi/pyccup/actions/workflows/python-publish.yml)
 
 Python version of clojure hiccup https://github.com/weavejester/hiccup
 Original concept by James Reeves
