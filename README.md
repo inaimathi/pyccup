@@ -75,3 +75,78 @@ Helpers are available on the elements namespace. The will help you to add hyperl
 >>> link_to(u'https://github.com/inaimathi/pyccup', u'pyccup' )
 [u'a', {u'href': u'https://github.com/inaimathi/pyccup'}, u'pyccup']
 ```
+
+## Using pyccup.elems
+
+The `elems` module provides constants for HTML/XML tag names, allowing for a more elegant and IDE-friendly syntax when constructing HTML/XML trees.
+
+### Basic Usage
+
+```python
+import pyccup.elems as e
+from pyccup.core import html
+
+# Create an HTML tree
+html_tree = [
+    e.html, 
+    [e.head, 
+     [e.title, "My Website"]],
+    [e.body, 
+     [e.div, {"class": "container"},
+      [e.h1, "Welcome!"],
+      [e.p, "This is a paragraph with ", [e.strong, "bold text"], "."]]]
+]
+
+# Convert to HTML string
+html_string = html(html_tree)
+print(html_string)
+```
+
+### Case Flexibility
+
+The module supports both lowercase and uppercase tag names:
+
+```python
+# These are equivalent
+[e.div, [e.p, "Content"]]
+[e.DIV, [e.P, "Content"]]
+```
+
+### Available Tags
+
+The module includes constants for all HTML5 tags, including:
+
+- Document structure: `html`, `head`, `body`
+- Headings: `h1` through `h6`
+- Text containers: `p`, `div`, `span`, etc.
+- Lists: `ul`, `ol`, `li`
+- Forms: `form`, `input`, `button`, etc.
+- Tables: `table`, `tr`, `td`, etc.
+- And many more...
+
+### Special Cases
+
+The `del` tag is available as `del_` (with an underscore) to avoid conflict with Python's `del` keyword.
+
+### Integration with pyccup
+
+This module is designed to work seamlessly with the rest of the pyccup library:
+
+```python
+from pyccup.core import html, convert
+import pyccup.elems as e
+
+# For full HTML documents
+document = html([
+    e.div, {"id": "content"},
+    [e.h1, "Title"],
+    [e.p, "Paragraph"]
+])
+
+# For HTML fragments
+fragment = convert([
+    e.div, {"id": "content"},
+    [e.h1, "Title"],
+    [e.p, "Paragraph"]
+])
+```

@@ -75,7 +75,10 @@ def _convert_tree(node):
     if rest and type(rest[0]) is dict:
         attrs = format_attributes(rest[0])
         rest = rest[1:]
-    if rest:
+
+    non_self_closing_tags = {"script", "iframe", "textarea", "title"}
+
+    if rest or btype.lower() in non_self_closing_tags:
         yield "<%s%s>" % (
             btype,
             attrs,
